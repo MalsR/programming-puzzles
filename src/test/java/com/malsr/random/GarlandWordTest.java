@@ -42,5 +42,4 @@ public class GarlandWordTest {
 
         assertEquals(5, garlandWord.garland("undergrounder"));
     }
-
 }
