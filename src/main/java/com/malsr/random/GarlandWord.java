@@ -19,4 +19,19 @@ public class GarlandWord {
         
         return degreeCount;
     }
+
+    public int garland2(final String wordToCheck) {
+        int degreeCount = 0;
+
+        for (int i = 0; i < wordToCheck.length(); i++) {
+            String endWord = wordToCheck.substring(wordToCheck.length() - i, wordToCheck.length());
+
+            //Check if each end word combination can be used to start the word
+            if (wordToCheck.startsWith(endWord)) {
+                degreeCount = i;
+            }
+        }
+
+        return degreeCount;
+    }
 }

@@ -11,6 +11,7 @@ public class GarlandWordTest {
         GarlandWord garlandWord = new GarlandWord();
 
         assertEquals(1, garlandWord.garland("ceramic"));
+        assertEquals(1, garlandWord.garland2("ceramic"));
     }
 
     @Test
@@ -18,6 +19,7 @@ public class GarlandWordTest {
         GarlandWord garlandWord = new GarlandWord();
 
         assertEquals(2, garlandWord.garland("onion"));
+        assertEquals(2, garlandWord.garland2("onion"));
     }
 
     @Test
@@ -27,6 +29,10 @@ public class GarlandWordTest {
         assertEquals(4, garlandWord.garland("alfalfa"));
         assertEquals(4, garlandWord.garland("hotshots"));
         assertEquals(4, garlandWord.garland("abracadabra"));
+
+        assertEquals(4, garlandWord.garland2("alfalfa"));
+        assertEquals(4, garlandWord.garland2("hotshots"));
+        assertEquals(4, garlandWord.garland2("abracadabra"));
     }
 
     @Test
@@ -34,12 +40,14 @@ public class GarlandWordTest {
         GarlandWord garlandWord = new GarlandWord();
 
         assertEquals(0, garlandWord.garland("programmer"));
+        assertEquals(0, garlandWord.garland2("programmer"));
     }
 
     @Test
-    public void returnsGiveWhenGiveWordIsGarlandWordwithDegreeFive() {
+    public void returnsGiveWhenGiveWordIsGarlandWordWithDegreeFive() {
         GarlandWord garlandWord = new GarlandWord();
 
         assertEquals(5, garlandWord.garland("undergrounder"));
+        assertEquals(5, garlandWord.garland2("undergrounder"));
     }
 }
