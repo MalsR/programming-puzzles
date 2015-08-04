@@ -23,7 +23,8 @@ public class GarlandWord {
     public int garland2(final String wordToCheck) {
         int degreeCount = 0;
 
-        for (int i = 0; i < wordToCheck.length(); i++) {
+        for (int i = 1; i < wordToCheck.length(); i++) {
+            //Find end word combinations to see they match the start of the word to check
             String endWord = wordToCheck.substring(wordToCheck.length() - i, wordToCheck.length());
 
             //Check if each end word combination can be used to start the word
@@ -33,5 +34,20 @@ public class GarlandWord {
         }
 
         return degreeCount;
+    }
+
+    public int garland3(final String wordToCheck) {
+        int degreeCount = 0;
+
+        for (int i = 1; i < wordToCheck.length(); i++) {
+            //beginIndex of substring is 0 because we want to check word combinations starting with first char of wordToCheck
+            String startWord = wordToCheck.substring(0, i);
+
+            if (wordToCheck.endsWith(startWord)) {
+                degreeCount = i;
+            }
+        }
+
+        return  degreeCount;
     }
 }
