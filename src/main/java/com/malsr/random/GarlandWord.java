@@ -2,13 +2,25 @@ package com.malsr.random;
 
 public class GarlandWord {
 
+    //Using String.substring to break the word and compare if word starts and ends with same n order
     public int garland(final String wordToCheck) {
         int degreeCount = 0;
         int lengthOfWord = wordToCheck.length();
 
         for (int i = 1; i < lengthOfWord; i++) {
+            /* Take word ceramic for example,
+             * e.g. when i = 1 then end word is 'c'
+             * e.g. when i = 2 then end word is 'ic'
+             */
             String endWord = wordToCheck.substring(lengthOfWord - i, lengthOfWord);
+
+            /* Remaining word is start of the word from 'i' until the beginning of the 'endWord'
+             * e.g. when i = 1 then remainingWord is 'eramic'
+             * e.g. when i = 2 then remainingWord is 'ramic'
+             */
             String remainingWord = wordToCheck.substring(i, lengthOfWord);
+
+            // Then by combining the endWord with remaining if its equal to wordToCheck then its a garland word!
             String combinedWord = endWord + remainingWord;
 
             if (wordToCheck.equalsIgnoreCase(combinedWord)) {
@@ -20,6 +32,7 @@ public class GarlandWord {
         return degreeCount;
     }
 
+    //Using String.startsWith by finding the end word(s)
     public int garland2(final String wordToCheck) {
         int degreeCount = 0;
 
@@ -36,6 +49,7 @@ public class GarlandWord {
         return degreeCount;
     }
 
+    //Using String.endsWith by finding the start word(s)
     public int garland3(final String wordToCheck) {
         int degreeCount = 0;
 
