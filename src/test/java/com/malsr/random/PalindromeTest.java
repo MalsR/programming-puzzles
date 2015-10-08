@@ -1,5 +1,6 @@
 package com.malsr.random;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -11,6 +12,13 @@ public class PalindromeTest {
         Palindrome palindrome = new Palindrome();
 
         assertTrue(palindrome.isPalindrome("Noel sees Leon."));
+    }
+
+    @Test
+    public void returnsTrueWhenComaSeparatedSentenceIsAPalindrome() {
+        Palindrome palindrome = new Palindrome();
+
+        assertTrue(palindrome.isPalindrome("A car, a man, a maraca."));
     }
 
     @Test
@@ -34,10 +42,11 @@ public class PalindromeTest {
         assertFalse(palindrome.isPalindrome("Onion"));
     }
 
-//    @Test
-//    public void returnsFalseWhenEmptyStringIsNotAPalindrome() {
-//        Palindrome palindrome = new Palindrome();
-//
-//        assertFalse(palindrome.isPalindrome(" "));
-//    }
+    @Test
+    @Ignore
+    public void returnsFalseWhenEmptyStringIsNotAPalindrome() {
+        Palindrome palindrome = new Palindrome();
+
+        assertFalse(palindrome.isPalindrome(" "));
+    }
 }
