@@ -28,4 +28,11 @@ public class ZeroBasedStringFinderTest {
 
         assertEquals(3, zeroBasedStringFinder.getIndexOfLongestCharacterRun("xcvmmm"));
     }
+
+    @Test
+    public void returnsIndexOfLongestCharRunInStartOfString() {
+        ZeroBasedStringFinder zeroBasedStringFinder = new ZeroBasedStringFinder();
+
+        assertEquals(0, zeroBasedStringFinder.getIndexOfLongestCharacterRun("ssssaccb"));
+    }
 }
