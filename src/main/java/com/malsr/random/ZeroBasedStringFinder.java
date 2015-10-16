@@ -2,7 +2,7 @@ package com.malsr.random;
 
 public class ZeroBasedStringFinder {
 
-    public int getIndexOfLongestRun(String wordToCheck) {
+    public int getIndexOfLongestCharacterRun(String wordToCheck) {
 
         int highestNumberOfMatches = 0;
         int previousHighestNumOfMatches = 0;
@@ -18,14 +18,18 @@ public class ZeroBasedStringFinder {
 
                 if (charAtIndex == nextCharFromI)  {
                     highestNumberOfMatches += 1;
-                    lastIndexPos = i + 1;
                 } else {
                     if (highestNumberOfMatches > previousHighestNumOfMatches) {
                         previousHighestNumOfMatches = highestNumberOfMatches;
-                        lastIndexPos = i + 1;
+                        lastIndexPos = i;
+                        highestNumberOfMatches = 0;
                     }
 
                 }
+            } else if (previousHighestNumOfMatches == 0 && highestNumberOfMatches > 0) {
+                //When the longest run of chars is at the end of string with no other matches
+                previousHighestNumOfMatches = highestNumberOfMatches;
+                lastIndexPos = i;
             }
         }
 
