@@ -1,6 +1,6 @@
 package com.malsr.random;
 
-public class ZeroBasedStringFinder {
+public class LongestCharRunIndexFinder {
 
     public int getIndexOfLongestCharacterRun(String wordToCheck) {
 
