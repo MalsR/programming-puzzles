@@ -6,20 +6,10 @@ public class Palindrome {
     public boolean isPalindrome(String stringToCheck) {
 
         if (stringToCheck != null && stringToCheck.length() > 0) {
-            StringBuilder plainWordBuilder = new StringBuilder();
-
-            //use stringToCheck.replace with regex to only include a-z chars and skip rest
-            for (int i = 0; i <= stringToCheck.length() - 1; i++) {
-                char charAtIndex = stringToCheck.charAt(i);
-                String stringToCompare = Character.toString(charAtIndex);
-                if (!" ".equals(stringToCompare) && !".".equals(stringToCompare) && !",".equals(stringToCompare)) {
-                    plainWordBuilder.append(stringToCompare);
-                }
-            }
-
             //One way to check if a word is a palindrome is to split the plain word in two and check if the first
             //part of the word is equal to the second part of the word (when reversed)
-            String plainWord = plainWordBuilder.toString();
+            String plainWord = getStringWithEnglishAlphabetLetters(stringToCheck);
+
             String secondPart;
             if (plainWord.length() % 2 == 0) {
                 //Even string length
@@ -54,22 +44,11 @@ public class Palindrome {
 
         boolean result = true;
 
-        StringBuilder plainWordBuilder = new StringBuilder();
-
-        //Now have whole english words only and remove any other chars
-        //use stringToCheck.replace with regex to only include a-z chars and skip rest
-        for (int i = 0; i <= stringToCheck.length() - 1; i++) {
-            char charAtIndex = stringToCheck.charAt(i);
-            String stringToCompare = Character.toString(charAtIndex);
-            if (!" ".equals(stringToCompare) && !".".equals(stringToCompare) && !",".equals(stringToCompare)) {
-                plainWordBuilder.append(stringToCompare);
-            }
-        }
-
         //Now iterate the plainEnglishWordsOnly to match chars at matching indexes
-        String plainEnglishWordsOnly = plainWordBuilder.toString();
+        String plainEnglishWordsOnly = getStringWithEnglishAlphabetLetters(stringToCheck);
         String lowerCasedEnglishWords = plainEnglishWordsOnly.toLowerCase();
         int lengthOfStringToCompare = lowerCasedEnglishWords.length() - 1;
+
         for (int i = 0; i < lengthOfStringToCompare; i++) {
             int endIndex = lengthOfStringToCompare - i;
 
@@ -85,5 +64,21 @@ public class Palindrome {
         }
 
         return result;
+    }
+
+    private String getStringWithEnglishAlphabetLetters(String stringToCheck) {
+        StringBuilder result = new StringBuilder();
+
+        //Now have whole english words only and remove any other chars
+        //use stringToCheck.replace with regex to only include a-z chars and skip rest
+        for (int i = 0; i <= stringToCheck.length() - 1; i++) {
+            char charAtIndex = stringToCheck.charAt(i);
+            String stringToCompare = Character.toString(charAtIndex);
+            if (!" ".equals(stringToCompare) && !".".equals(stringToCompare) && !",".equals(stringToCompare)) {
+                result.append(stringToCompare);
+            }
+        }
+
+        return result.toString();
     }
 }
