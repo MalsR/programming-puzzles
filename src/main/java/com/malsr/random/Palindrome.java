@@ -2,14 +2,15 @@ package com.malsr.random;
 
 public class Palindrome {
 
-    public boolean isPalindrome(String wordToCheck) {
+    //Slightly complicated way of figuring out if any given word, sentence etc is a palindrome, see below.
+    public boolean isPalindrome(String stringToCheck) {
 
-        if (wordToCheck != null) {
+        if (stringToCheck != null && stringToCheck.length() > 0) {
             StringBuilder plainWordBuilder = new StringBuilder();
 
-            //use wordToCheck.replace with regex to only include a-z chars and skip rest
-            for (int i = 0; i <= wordToCheck.length() - 1; i++) {
-                char charAtIndex = wordToCheck.charAt(i);
+            //use stringToCheck.replace with regex to only include a-z chars and skip rest
+            for (int i = 0; i <= stringToCheck.length() - 1; i++) {
+                char charAtIndex = stringToCheck.charAt(i);
                 String stringToCompare = Character.toString(charAtIndex);
                 if (!" ".equals(stringToCompare) && !".".equals(stringToCompare) && !",".equals(stringToCompare)) {
                     plainWordBuilder.append(stringToCompare);
@@ -42,5 +43,47 @@ public class Palindrome {
         }
 
         return false;
+    }
+
+    //A simpler way (so far) of checking if any given word, sentence etc is a palindrome, see below.
+    public boolean isPalindrome2(String stringToCheck) {
+
+        if (stringToCheck == null || stringToCheck.length() == 0) {
+            return false;
+        }
+
+        boolean result = true;
+
+        StringBuilder plainWordBuilder = new StringBuilder();
+
+        //Now have whole english words only and remove any other chars
+        //use stringToCheck.replace with regex to only include a-z chars and skip rest
+        for (int i = 0; i <= stringToCheck.length() - 1; i++) {
+            char charAtIndex = stringToCheck.charAt(i);
+            String stringToCompare = Character.toString(charAtIndex);
+            if (!" ".equals(stringToCompare) && !".".equals(stringToCompare) && !",".equals(stringToCompare)) {
+                plainWordBuilder.append(stringToCompare);
+            }
+        }
+
+        //Now iterate the plainEnglishWordsOnly to match chars at matching indexes
+        String plainEnglishWordsOnly = plainWordBuilder.toString();
+        String lowerCasedEnglishWords = plainEnglishWordsOnly.toLowerCase();
+        int lengthOfStringToCompare = lowerCasedEnglishWords.length() - 1;
+        for (int i = 0; i < lengthOfStringToCompare; i++) {
+            int endIndex = lengthOfStringToCompare - i;
+
+            char charAtStartIndex = lowerCasedEnglishWords.charAt(i);
+            char charAtOppositeIndex = lowerCasedEnglishWords.charAt(endIndex);
+
+            if (charAtStartIndex != charAtOppositeIndex) {
+                //Then this means that char at ascending index is not matching with the char at descending or
+                //mirrored index
+                result = false;
+                break;
+            }
+        }
+
+        return result;
     }
 }

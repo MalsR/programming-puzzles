@@ -25,6 +25,6 @@ public class FirstReverseTest {
         FirstReverse firstReverse = new FirstReverse();
 
         String actualReversedString = firstReverse.reverse("Hello");
-        assertEquals("Expected reversed string olleH to be returned", actualReversedString);
+        assertEquals("Expected reversed string olleH to be returned", "olleH", actualReversedString);
     }
 }
