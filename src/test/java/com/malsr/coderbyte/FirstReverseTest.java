@@ -10,20 +10,21 @@ public class FirstReverseTest {
     public void returnsNullWhenGivenStringIsNull() {
         FirstReverse firstReverse = new FirstReverse();
 
-        assertNull(firstReverse.reverse(null));
+        assertNull("Expected null to be returned", firstReverse.reverse(null));
     }
 
     @Test
     public void returnsNullWhenGivenStringIsEmpty() {
         FirstReverse firstReverse = new FirstReverse();
 
-        assertNull(firstReverse.reverse(null));
+        assertNull("Expected null to be returned", firstReverse.reverse(null));
     }
 
     @Test
     public void returnsReversedString() {
         FirstReverse firstReverse = new FirstReverse();
 
-        assertEquals("olleH", firstReverse.reverse("Hello"));
+        String actualReversedString = firstReverse.reverse("Hello");
+        assertEquals("Expected reversed string olleH to be returned", actualReversedString);
     }
 }

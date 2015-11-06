@@ -10,8 +10,9 @@ public class AnagramChecker {
         Map<Character, Integer> wordACharCount = getMapOfCharacterCounts(wordA);
         Map<Character, Integer> wordBCharCount = getMapOfCharacterCounts(wordB);
 
-        //One quick way to check, by creating a map of one word's chars and the number of times its used in word
-        //and compare that against the other word
+        //One quick way to check is by creating a map, where the key is a Character and value represents number of times
+        //those characters are found in a word. By checking the equality of the two maps we can find if two words are
+        //anagrams or not.
         return wordACharCount.equals(wordBCharCount);
     }
 
@@ -22,7 +23,7 @@ public class AnagramChecker {
             char charAtIndex = wordToCheck.charAt(i);
             if (result.containsKey(charAtIndex)) {
                 Integer countOfChar = result.get(charAtIndex);
-                result.put(charAtIndex, countOfChar + 1);
+                result.put(charAtIndex, countOfChar++);
             } else {
                 result.put(charAtIndex, 1);
             }
