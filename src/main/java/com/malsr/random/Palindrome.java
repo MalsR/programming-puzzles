@@ -8,18 +8,18 @@ public class Palindrome {
         if (stringToCheck != null && stringToCheck.length() > 0) {
             //One way to check if a word is a palindrome is to split the plain word in two and check if the first
             //part of the word is equal to the second part of the word (when reversed)
-            String plainWord = getStringWithEnglishAlphabetLetters(stringToCheck);
+            String plainEnglishWordsOnly = getStringWithEnglishAlphabetLetters(stringToCheck);
 
             String secondPart;
-            if (plainWord.length() % 2 == 0) {
+            if (plainEnglishWordsOnly.length() % 2 == 0) {
                 //Even string length
-                secondPart = plainWord.substring(plainWord.length() / 2, plainWord.length());
+                secondPart = plainEnglishWordsOnly.substring(plainEnglishWordsOnly.length() / 2, plainEnglishWordsOnly.length());
             } else {
                 //odd string length, add 1 to skip centre char start from the next char to the end of the word
-                secondPart = plainWord.substring((plainWord.length() / 2) + 1, plainWord.length());
+                secondPart = plainEnglishWordsOnly.substring((plainEnglishWordsOnly.length() / 2) + 1, plainEnglishWordsOnly.length());
             }
 
-            String firstHalfPart = plainWord.substring(0, plainWord.length() / 2);
+            String firstHalfPart = plainEnglishWordsOnly.substring(0, plainEnglishWordsOnly.length() / 2);
 
             //Now reverse the secondPart String so we can match that to first
             StringBuilder reversedSecondPartBuilder = new StringBuilder();
@@ -52,10 +52,10 @@ public class Palindrome {
         for (int i = 0; i < lengthOfStringToCompare; i++) {
             int endIndex = lengthOfStringToCompare - i;
 
-            char charAtStartIndex = lowerCasedEnglishWords.charAt(i);
-            char charAtOppositeIndex = lowerCasedEnglishWords.charAt(endIndex);
+            char charAtAscendingIndex = lowerCasedEnglishWords.charAt(i);
+            char charAtDescendingIndex = lowerCasedEnglishWords.charAt(endIndex);
 
-            if (charAtStartIndex != charAtOppositeIndex) {
+            if (charAtAscendingIndex != charAtDescendingIndex) {
                 //Then this means that char at ascending index is not matching with the char at descending or
                 //mirrored index
                 result = false;
