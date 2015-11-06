@@ -16,3 +16,4 @@ Some coding puzzles to keep you going and to have some fun. Not a competition!
  
 #### Below are examples from Coderbyte http://coderbyte.com/CodingArea/Challenges/ 
 1. FirstReverse
+ * [Readme](https://github.com/MalsR/programming-puzzles/blob/master/src/main/java/com/malsr/coderbyte/FirstReverse-README.md)
