@@ -1,6 +1,6 @@
 ### Description
 
-[*Slighty updated the description*] 
+[*Slightly updated the description*]
 
 Write a function that takes a String parameter and return the String in reversed order.
 
