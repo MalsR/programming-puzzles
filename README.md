@@ -1,6 +1,9 @@
 # Puzzles
 
-Some coding puzzles to keep you going and to have some fun. Not a competition!
+Some coding puzzles and examples to keep you ticking and most important of all... to have
+some fun. Note: This is not a competition! This is also not a project created for marketing
+purposes so you're not compelled to favourite or watch or whatever. If you're interested by
+all means dig in and please feel free/open to suggest/change. We all have a TTL...
 
 `Life in the matrix goes on`
 
