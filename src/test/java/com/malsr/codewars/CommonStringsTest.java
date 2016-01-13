@@ -7,40 +7,55 @@ import static org.junit.Assert.*;
 public class CommonStringsTest {
 
     @Test
-    public void returnsTrueWhenBothStringsHaveCommonSubString() {
-        assertTrue(CommonStrings.SubstringTest("Something", "Home"));
-        //assertTrue(CommonStrings.SubstringTest("Something", "ng"));
+    public void returnsTrueWhenStringsHaveCommonSubString() {
+        assertTrue(CommonStrings.substringTest("Something", "Home"));
+    }
+
+    @Test
+    public void returnsTrueWhenStringsHaveCommonSubStringReversedParameters() {
+        assertTrue(CommonStrings.substringTest("Home", "Something"));
     }
 
     @Test
     public void returnsTrueWhenBothStringsAreEqual() {
-        assertTrue(CommonStrings.SubstringTest("home", "home"));
+        assertTrue(CommonStrings.substringTest("home", "home"));
+    }
+
+    @Test
+    public void returnsTrueWhenStringsContainNumbers() {
+        assertTrue(CommonStrings.substringTest("Hi345", "Bye245"));
     }
 
     @Test
     public void returnsTrueWhenStringsHaveCommonSubStringsIgnoringCase() {
-        assertTrue("", CommonStrings.SubstringTest("HELlo", "Below"));
+        assertTrue("", CommonStrings.substringTest("HELlo", "Below"));
     }
 
     @Test
     public void returnsFalseWhenStringsDoesNotHaveCommonSubString() {
-        assertFalse(CommonStrings.SubstringTest("Something", "Fun"));
+        assertFalse(CommonStrings.substringTest("Something", "Fun"));
+    }
+
+    @Test
+    public void returnsFalseWhenEitherStringIsEmpty() {
+        assertFalse(CommonStrings.substringTest("Test", ""));
+        assertFalse(CommonStrings.substringTest("", "Test"));
     }
 
     @Test
     public void returnsFalseWhenStringsAreNull() {
-        assertFalse(CommonStrings.SubstringTest(null, null));
+        assertFalse(CommonStrings.substringTest(null, null));
     }
 
     @Test
     public void returnsFalseWhenFirstStringHasLengthOfOne() {
-        boolean actualValue = CommonStrings.SubstringTest("U", "Under");
+        boolean actualValue = CommonStrings.substringTest("U", "Under");
         assertFalse("Expected to return false as the first String param length is 1", actualValue);
     }
 
     @Test
     public void returnsFalseWhenSecondStringHasLengthOfOne() {
-        boolean actualValue = CommonStrings.SubstringTest("Fun", "u");
+        boolean actualValue = CommonStrings.substringTest("Fun", "u");
         assertFalse("Expected to return false as the second String param length is 1", actualValue);
     }
 }

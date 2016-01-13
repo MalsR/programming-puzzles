@@ -2,8 +2,8 @@ package com.malsr.codewars;
 
 public class CommonStrings {
 
-    public static boolean SubstringTest(String str1, String str2) {
-        //can do preconditions
+    public static boolean substringTest(String str1, String str2) {
+        //can do preconditions if you really want to
         if (str1 != null && str1.length() > 1 && str2 != null && str2.length() > 1) {
 
             for (int i = 1; i < str1.length(); i++) {
