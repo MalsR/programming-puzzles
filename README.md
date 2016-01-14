@@ -22,3 +22,7 @@ all means dig in and please feel free/open to suggest/change. We all have a TTL.
 #### Below are examples from Coderbyte http://coderbyte.com/CodingArea/Challenges/ 
 1. FirstReverse
  * [Readme](https://github.com/MalsR/programming-puzzles/blob/master/src/main/java/com/malsr/coderbyte/FirstReverse-README.md)
+
+#### Examples from CodeWars http://www.codewars.com
+1. CommonStrings
+ * [Readme] (https://github.com/MalsR/programming-puzzles/blob/master/src/main/java/com/malsr/codewars/CommonStrings-README.md)
