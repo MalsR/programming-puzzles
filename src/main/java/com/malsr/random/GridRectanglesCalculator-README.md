@@ -6,7 +6,7 @@ Examples:
 numberOfRectangles(3, 2) == 18
 numberOfRectangles(4, 4) == 100
 
-See Link below for a clearer picture
+Another interesting article I found about calculating rectangles in a grid
 http://www.mathblog.dk/project-euler-85-rectangles-rectangular-grid/
 
 See Link also from CodeKata
