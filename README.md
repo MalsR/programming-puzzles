@@ -16,6 +16,8 @@ all means dig in and please feel free/open to suggest/change. We all have a TTL.
  * [Readme](https://github.com/MalsR/programming-puzzles/blob/master/src/main/java/com/malsr/random/Palindrome-README.md#description)
 4. LongestCharRunIndexFinder
  * [Readme](https://github.com/MalsR/programming-puzzles/blob/master/src/main/java/com/malsr/random/LongestCharRunIndexFinder-README.md#description)
+5. GridRectanglesCalculator - Calculate the number of rectangles in a given m*n grid
+ * [Readme](https://github.com/MalsR/programming-puzzles/blob/master/src/main/java/com/malsr/random/GridRectanglesCalculator-README.md)
  
 #### Below are examples from Coderbyte http://coderbyte.com/CodingArea/Challenges/ 
 1. FirstReverse
