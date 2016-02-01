@@ -3,9 +3,9 @@ package com.malsr.codewars;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
-public class MaximumLengthDifference {
+public class MaximumLengthDifferenceCalculator {
 
-    public int mxdiflg(String[] firstArray, String[] secondArray) {
+    public int maxLengthDiff(String[] firstArray, String[] secondArray) {
 
         if (firstArray.length == 0 || secondArray.length == 0) {
             return -1;
