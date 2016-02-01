@@ -1,9 +1,8 @@
 # Puzzles
 
 Some coding puzzles and examples to keep you ticking and most important of all... to have
-some fun. Note: This is not a competition! This is also not a project created for marketing
-purposes so you're not compelled to favourite or watch or whatever. If you're interested by
-all means dig in and please feel free/open to suggest/change. We all have a TTL...
+some fun. Note: This is not a competition! This is also not a project created to trend in github so 
+you're not compelled to favourite or watch. If you're interested in adding, changing by all means dig in and please feel free/open to suggest/change. We all have a TTL...
 
 `Life in the matrix goes on`
 
@@ -22,3 +21,7 @@ all means dig in and please feel free/open to suggest/change. We all have a TTL.
 #### Below are examples from Coderbyte http://coderbyte.com/CodingArea/Challenges/ 
 1. FirstReverse
  * [Readme](https://github.com/MalsR/programming-puzzles/blob/master/src/main/java/com/malsr/coderbyte/FirstReverse-README.md)
+
+#### Examples from CodeWars http://www.codewars.com
+1. CommonStrings
+ * [Readme] (https://github.com/MalsR/programming-puzzles/blob/master/src/main/java/com/malsr/codewars/CommonStrings-README.md)
