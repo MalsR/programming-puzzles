@@ -25,3 +25,5 @@ you're not compelled to favourite or watch. If you're interested in adding, chan
 #### Examples from CodeWars http://www.codewars.com
 1. CommonStrings
  * [Readme] (https://github.com/MalsR/programming-puzzles/blob/master/src/main/java/com/malsr/codewars/CommonStrings-README.md)
+2. MaximumLengthDifference
+ * [Readme] (https://github.com/MalsR/programming-puzzles/blob/master/src/main/java/com/malsr/codewars/MaximumLengthDifference-README.md)
