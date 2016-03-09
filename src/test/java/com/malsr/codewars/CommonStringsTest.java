@@ -8,7 +8,7 @@ public class CommonStringsTest {
 
     @Test
     public void returnsTrueWhenStringsHaveCommonSubString() {
-        assertTrue(CommonStrings.substringTest("Something", "Home"));
+        assertTrue(CommonStrings.substringTest("Something", "HoMe"));
     }
 
     @Test
