@@ -7,10 +7,9 @@ import static org.junit.Assert.*;
 public class ReversingFunTest {
 
     @Test
-    public void reversesString() {
-        //To start off with
+    public void reversesStringUpToSecondIndex() {
         ReversingFun reversingFun = new ReversingFun();
 
-        assertEquals("543210", reversingFun.funReverse("012345"));
+        assertEquals("504132", reversingFun.funReverse("012345"));
     }
 }

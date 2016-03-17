@@ -15,3 +15,5 @@ A string of length 1 - 1000
 Output:
 
 A correctly reordered string.
+
+http://www.codewars.com/kata/566efcfbf521a3cfd2000056/train/java
