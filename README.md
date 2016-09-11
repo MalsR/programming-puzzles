@@ -1,8 +1,7 @@
 # Puzzles
 
 Some coding puzzles and examples to keep you ticking and most important of all... to have
-some fun. Note: This is not a competition! This is also not a project created to trend in github so 
-you're not compelled to favourite or watch. If you're interested in adding, changing by all means dig in and please feel free/open to suggest/change. We all have a TTL...
+some fun. Note: This is not a competition! You're also not compelled to favourite or watch. If you're interested in adding, changing by all means dig in and please feel free to suggest/change. We all have a TTL...
 
 `Life in the matrix goes on`
 
@@ -27,3 +26,5 @@ you're not compelled to favourite or watch. If you're interested in adding, chan
  * [Readme] (https://github.com/MalsR/programming-puzzles/blob/master/src/main/java/com/malsr/codewars/CommonStrings-README.md)
 2. MaximumLengthDifference
  * [Readme] (https://github.com/MalsR/programming-puzzles/blob/master/src/main/java/com/malsr/codewars/MaximumLengthDifference-README.md)
+3. ReversingFun
+ * [Readme] (https://github.com/MalsR/programming-puzzles/blob/master/src/main/java/com/malsr/codewars/ReversingFun-README.md)
