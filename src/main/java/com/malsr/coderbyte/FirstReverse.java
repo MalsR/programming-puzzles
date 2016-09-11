@@ -9,8 +9,9 @@ public class FirstReverse {
 
         StringBuilder result = new StringBuilder();
 
-        for (int i = str.length(); i >= 1; i--) {
+        int stringLength = str.length();
 
+        for (int i = stringLength; i >= 1; i--) {
             String substring = str.substring(i - 1, i);
             result.append(substring);
         }
