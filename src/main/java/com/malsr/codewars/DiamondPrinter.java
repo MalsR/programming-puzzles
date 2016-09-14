@@ -1,6 +1,7 @@
 package com.malsr.codewars;
 
 public class DiamondPrinter {
+
     public String print(int numberOfDiamonds) {
         if (numberOfDiamonds < 0 || numberOfDiamonds % 2 == 0) {
             return null;
@@ -11,6 +12,8 @@ public class DiamondPrinter {
         }
 
         StringBuilder result = new StringBuilder();
+
+        //Needs refactoring, satisfies the rules
         for (int x = 1; x <= numberOfDiamonds; x = x + 2) {
             StringBuilder diamondsPerRow = new StringBuilder();
 

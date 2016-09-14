@@ -29,14 +29,28 @@ public class DiamondPrinterTest {
     }
 
     @Test
-    public void printsDiamondsBasedOnGivenEvenNumbers() {
+    public void printsDiamondsWhenNumberToPrintIsThree() {
         DiamondPrinter diamondPrinter = new DiamondPrinter();
 
-        StringBuffer expectedString = new StringBuffer();
+        StringBuilder expectedString = new StringBuilder();
         expectedString.append(" *\n");
         expectedString.append("***\n");
         expectedString.append(" *\n");
 
         assertEquals(expectedString.toString(), diamondPrinter.print(3));
+    }
+
+    @Test
+    public void printsDiamondsWhenNumberToPrintIsFive() {
+        DiamondPrinter diamondPrinter = new DiamondPrinter();
+
+        StringBuilder expectedString = new StringBuilder();
+        expectedString.append("  *\n");
+        expectedString.append(" ***\n");
+        expectedString.append("*****\n");
+        expectedString.append(" ***\n");
+        expectedString.append("  *\n");
+
+        assertEquals(expectedString.toString(), diamondPrinter.print(5));
     }
 }
