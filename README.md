@@ -28,3 +28,5 @@ some fun. Note: This is not a competition! You're also not compelled to favourit
  * [Readme] (https://github.com/MalsR/programming-puzzles/blob/master/src/main/java/com/malsr/codewars/MaximumLengthDifference-README.md)
 3. ReversingFun
  * [Readme] (https://github.com/MalsR/programming-puzzles/blob/master/src/main/java/com/malsr/codewars/ReversingFun-README.md)
+4. DiamondPrinter
+ * [Readme] (https://github.com/MalsR/programming-puzzles/blob/master/src/main/java/com/malsr/codewars/DiamondPrinter-README.md)
