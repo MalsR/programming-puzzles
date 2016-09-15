@@ -2,51 +2,48 @@ package com.malsr.codewars;
 
 public class DiamondPrinter {
 
-    public String print(int numberOfDiamonds) {
-        if (numberOfDiamonds < 0 || numberOfDiamonds % 2 == 0) {
+    public String print(int maxDiamondsToPrint) {
+        if (maxDiamondsToPrint < 0 || maxDiamondsToPrint % 2 == 0) {
             return null;
-        }
-
-        if (numberOfDiamonds == 1) {
-            return "*";
         }
 
         final StringBuilder result = new StringBuilder();
 
         //Calculate upper half including middle diamonds
-        for (int x = 1; x <= numberOfDiamonds; x = x + 2) {
-            StringBuilder diamondsPerRow = new StringBuilder();
-
-            if (x != numberOfDiamonds) {
-                appendSpaces(numberOfDiamonds, x, diamondsPerRow);
+        for (int x = 1; x <= maxDiamondsToPrint; x = x + 2) {
+            if (x != maxDiamondsToPrint) {
+                appendSpaces(maxDiamondsToPrint, x, result);
             }
-            appendDiamonds(result, x, diamondsPerRow);
+            appendDiamonds(result, x);
+            if (maxDiamondsToPrint != 1) {
+                appendNewLine(result);
+            }
         }
 
         //Calculate lower half only
-        for (int x = numberOfDiamonds - 2; x > 0; x = x - 2) {
-            StringBuilder diamondsPerRow = new StringBuilder();
-
-            appendSpaces(numberOfDiamonds, x, diamondsPerRow);
-            appendDiamonds(result, x, diamondsPerRow);
+        for (int x = maxDiamondsToPrint - 2; x > 0; x = x - 2) {
+            appendSpaces(maxDiamondsToPrint, x, result);
+            appendDiamonds(result, x);
+            appendNewLine(result);
         }
 
         return result.toString();
     }
 
-    private void appendSpaces(int numberOfDiamonds, int x, StringBuilder diamondsPerRow) {
-        int numberOfSpaces = (numberOfDiamonds - x) / 2;
+    private void appendSpaces(int maxDiamondsToPrint, int diamondsInRow, StringBuilder diamondsPerRow) {
+        int numberOfSpaces = (maxDiamondsToPrint - diamondsInRow) / 2;
         for (int z = 0; z < numberOfSpaces; z++) {
             diamondsPerRow.append(" ");
         }
     }
 
-    private void appendDiamonds(StringBuilder result, int x, StringBuilder diamondsPerRow) {
-        for (int y = 0; y < x; y++) {
-            diamondsPerRow.append("*");
+    private void appendDiamonds(StringBuilder result, int diamondsInRow) {
+        for (int y = 0; y < diamondsInRow; y++) {
+            result.append("*");
         }
-        diamondsPerRow.append("\n");
+    }
 
-        result.append(diamondsPerRow);
+    private void appendNewLine(StringBuilder result) {
+        result.append("\n");
     }
 }
