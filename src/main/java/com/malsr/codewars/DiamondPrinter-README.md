@@ -1,5 +1,5 @@
 
-###Diamond Printer
+###Diamond Printer (give me a diamond)
 
 *Interesting little puzzle about printing a diamond shape based on the even number passed. See link below.* 
 
