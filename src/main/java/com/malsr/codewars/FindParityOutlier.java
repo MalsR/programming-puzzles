@@ -32,41 +32,4 @@ public class FindParityOutlier {
             return firstEvenNumber.isPresent() ? firstEvenNumber.get() : 0;
         }
     }
-
-    public int find2(int[] integers) {
-        if (integers.length == 0) {
-            return 0;
-        }
-
-        int result = 0;
-        int sumOfNumbers = 0;
-//        boolean isZeroPresent = false;
-        for (int i = 0; i < integers.length; i++) {
-            int numberToCheck = integers[i];
-
-//            if (numberToCheck == 0) {
-//                isZeroPresent = true;
-//            }
-            sumOfNumbers = sumOfNumbers + numberToCheck;
-        }
-
-        if (sumOfNumbers % 2 != 0) {
-            for (int i = 0; i < integers.length; i++) {
-                if (integers[i] % 2 != 0) {
-                    result = integers[i];
-                }
-            }
-        } else {
-//            if (isZeroPresent) {
-//                return 0;
-//            }
-            for (int i = 0; i < integers.length; i++) {
-                if (integers[i] % 2 == 0) {
-                    result = integers[i];
-                }
-            }
-        }
-
-        return result;
-    }
 }
