@@ -1,5 +1,6 @@
 package com.malsr.codewars;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
@@ -11,19 +12,16 @@ public class FindParityOutlier {
             throw new IllegalArgumentException("Array should contain three numbers or more");
         }
 
-        Set<Integer> evenNumbers = new HashSet<>();
-        Set<Integer> oddNumbers = new HashSet<>();
+        final Set<Integer> evenNumbers = new HashSet<>();
+        final Set<Integer> oddNumbers = new HashSet<>();
 
-        for (int x = 0; x < integers.length; x++) {
-
-            int numberToCheck = integers[x];
-
-            if (numberToCheck * 2 == 0 || numberToCheck % 2 != 0) {
+        Arrays.stream(integers).forEach(numberToCheck -> {
+            if (numberToCheck % 2 != 0) {
                 oddNumbers.add(numberToCheck);
             } else {
                 evenNumbers.add(numberToCheck);
             }
-        }
+        });
 
         if (evenNumbers.size() > oddNumbers.size()) {
             return oddNumbers.stream().findFirst().get();
