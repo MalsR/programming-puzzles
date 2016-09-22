@@ -37,6 +37,6 @@ public class StringRotationCalculatorTest {
     public void returnsCorrectRotationNumber() {
         StringRotationCalculator rotationCalculator = new StringRotationCalculator();
 
-        assertEquals(expectedRotation, rotationCalculator.rotation(originalString, rotatedString));
+        assertEquals(expectedRotation, rotationCalculator.rotatedCharacters(originalString, rotatedString));
     }
 }
