@@ -4,12 +4,10 @@ public class CompleteThePattern2 {
 
     public String pattern(int number) {
 
-        StringBuilder result = new StringBuilder();
+        final StringBuilder result = new StringBuilder();
 
         for (int y = number; y > 0; y--) {
-            result.append(number);
-
-            for (int x = 1; x <= y - 1; x++) {
+            for (int x = 0; x < y; x++) {
                 result.append(number - x);
             }
 
