@@ -21,4 +21,7 @@ some fun. Note: This is not a competition! You're also not compelled to favourit
 3. ReversingFun - [Readme] (https://github.com/MalsR/programming-puzzles/blob/master/src/main/java/com/malsr/codewars/ReversingFun-README.md)
 4. DiamondPrinter - [Readme] (https://github.com/MalsR/programming-puzzles/blob/master/src/main/java/com/malsr/codewars/DiamondPrinter-README.md)
 5. StringRotationCalculator - [Readme] (https://github.com/MalsR/programming-puzzles/blob/master/src/main/java/com/malsr/codewars/StringRotationCalculator-README.md)
-6. CompleteThePattern#2 - [Readme] (https://github.com/MalsR/programming-puzzles/blob/master/src/main/java/com/malsr/codewars/CompleteThePattern2-README)
+6. CompleteThePattern#1 - [Readme] (https://github.com/MalsR/programming-puzzles/blob/master/src/main/java/com/malsr/codewars/CompleteThePattern1-README.md)
+   - [Java] (https://github.com/MalsR/programming-puzzles/blob/master/src/main/java/com/malsr/codewars/CompleteThePattern1.java)
+   - [Python] (https://github.com/MalsR/python-learning/blob/master/puzzles/CompareThePattern1.py) 
+7. CompleteThePattern#2 - [Readme] (https://github.com/MalsR/programming-puzzles/blob/master/src/main/java/com/malsr/codewars/CompleteThePattern2-README.md)
