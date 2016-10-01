@@ -1,8 +1,8 @@
 package com.malsr.codewars;
 
-public class CommonStrings {
+public class CommonStringFinder {
 
-    public static boolean substringTest(String firstString, String secondString) {
+    public static boolean hasCommonString(String firstString, String secondString) {
         //can do preconditions if you really want to
         if (firstString != null && firstString.length() > 1 &&
                 secondString != null && secondString.length() > 1) {
@@ -22,7 +22,7 @@ public class CommonStrings {
     }
 
     //Another way of achieving example
-    public static boolean substringTestExample2(String str1, String str2) {
+    public static boolean hasCommonString_1(String str1, String str2) {
         //can do preconditions if you really want to
         if (str1 != null && str1.length() > 1 && str2 != null && str2.length() > 1) {
 

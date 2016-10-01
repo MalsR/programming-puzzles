@@ -16,7 +16,7 @@ some fun. Note: This is not a competition! You're also not compelled to favourit
 1. FirstReverse - [Readme] (https://github.com/MalsR/programming-puzzles/blob/master/src/main/java/com/malsr/coderbyte/FirstReverse-README.md)
 
 #### Examples from CodeWars http://www.codewars.com
-1. CommonStrings - [Readme] (https://github.com/MalsR/programming-puzzles/blob/master/src/main/java/com/malsr/codewars/CommonStrings-README.md)
+1. CommonStrings - [Readme] (https://github.com/MalsR/programming-puzzles/blob/master/src/main/java/com/malsr/codewars/CommonStringFinder-README.md)
 2. MaximumLengthDifference - [Readme] (https://github.com/MalsR/programming-puzzles/blob/master/src/main/java/com/malsr/codewars/MaximumLengthDifference-README.md)
 3. ReversingFun - [Readme] (https://github.com/MalsR/programming-puzzles/blob/master/src/main/java/com/malsr/codewars/ReversingFun-README.md)
 4. DiamondPrinter - [Readme] (https://github.com/MalsR/programming-puzzles/blob/master/src/main/java/com/malsr/codewars/DiamondPrinter-README.md)
