@@ -44,4 +44,11 @@ public class ReversingFunTest {
 
         assertEquals(expectedValue, reversingFun.funReverse_1(actualValue));
     }
+
+    @Test
+    public void reversesString_AnotherWay_2() {
+        ReversingFun reversingFun = new ReversingFun();
+
+        assertEquals(expectedValue, reversingFun.funReverse_2(actualValue));
+    }
 }

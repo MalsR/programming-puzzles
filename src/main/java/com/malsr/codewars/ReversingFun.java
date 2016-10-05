@@ -3,7 +3,18 @@ package com.malsr.codewars;
 public class ReversingFun {
 
     public String funReverse(final String stringToReverse) {
+        if (stringToReverse.length() == 1) {
+            return stringToReverse;
+        } else {
+            String reversedString = new StringBuilder(stringToReverse).reverse().toString();
+            String secondPartToReverse = reversedString.substring(1, reversedString.length());
 
+            return reversedString.substring(0, 1) + funReverse(secondPartToReverse);
+        }
+    }
+
+    //Slightly reduced way of achieving the reverse
+    public String funReverse_2(final String stringToReverse) {
         String initialReversedString = new StringBuilder(stringToReverse).reverse().toString();
 
         StringBuilder result = new StringBuilder();
@@ -23,8 +34,8 @@ public class ReversingFun {
         return result.toString();
     }
 
+    //Another way of achieving the same thing
     public String funReverse_1(final String stringToReverse) {
-
         String initialReversedString = reverse(stringToReverse);
 
         StringBuilder result = new StringBuilder();

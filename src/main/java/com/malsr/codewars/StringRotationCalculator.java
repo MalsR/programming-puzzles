@@ -10,10 +10,10 @@ public class StringRotationCalculator {
 
         //Working our way backwards to find a match
         for (int x = originalString.length() - 1; x >= 0; x--) {
-            String subStringOfSuffix = originalString.substring(x, originalString.length());
-            String subStringOfPrefix = originalString.substring(0, x);
+            String originalSubStringSuffix = originalString.substring(x, originalString.length());
+            String originalSubStringPrefix = originalString.substring(0, x);
 
-            String stringToCompare = subStringOfSuffix + subStringOfPrefix;
+            String stringToCompare = originalSubStringSuffix + originalSubStringPrefix;
 
             if (stringToCompare.equals(rotatedString)) {
                 return originalString.length() - x;
