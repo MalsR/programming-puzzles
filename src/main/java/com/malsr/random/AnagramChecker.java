@@ -6,9 +6,8 @@ import java.util.Map;
 public class AnagramChecker {
 
     public boolean areAnagrams(String wordA, String wordB) {
-
-        Map<Character, Integer> wordACharCount = getMapOfCharacterCounts(wordA);
-        Map<Character, Integer> wordBCharCount = getMapOfCharacterCounts(wordB);
+        Map<Character, Integer> wordACharCount = getMapOfCharacterCounts(wordA.toLowerCase());
+        Map<Character, Integer> wordBCharCount = getMapOfCharacterCounts(wordB.toLowerCase());
 
         //One quick way to check is by creating a map, where the key is a Character and value represents number of times
         //those characters are found in a word. By checking the equality of the two maps we can find if two words are
