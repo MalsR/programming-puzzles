@@ -18,6 +18,7 @@ public class AnagramCheckerTest {
                 {"orchestra", "carthorse", true},
                 {"momdad", "dadmom", true},
                 {"tab", "bate", false},
+                {"hello man", "nam hell o", true},
                 {"Clint Eastwood", "Old West Action", true}
         });
     }
@@ -33,7 +34,14 @@ public class AnagramCheckerTest {
     }
 
     @Test
-    public void returnsTrueIfGivenWordsAreAnagrams() {
+    public void returnsTrueIfBothWordsAreAnagrams() {
+        AnagramChecker anagramChecker = new AnagramChecker();
+
+        assertEquals(expectedResult, anagramChecker.areAnagrams_1(stringAToCompare, stringBToCompare));
+    }
+
+    @Test
+    public void returnsIfBothWordsAreAnagrams_AnotherWay() {
         AnagramChecker anagramChecker = new AnagramChecker();
 
         assertEquals(expectedResult, anagramChecker.areAnagrams(stringAToCompare, stringBToCompare));

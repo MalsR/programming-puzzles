@@ -1,11 +1,27 @@
 package com.malsr.random;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.function.IntConsumer;
+import java.util.function.IntPredicate;
 
 public class AnagramChecker {
 
     public boolean areAnagrams(String wordA, String wordB) {
+        int[] wordASortedArray = wordA.toLowerCase().chars()
+                                                .filter(Character::isAlphabetic)
+                                                .sorted()
+                                                .toArray();
+        int[] wordBSortedArray = wordB.toLowerCase().chars()
+                                                .filter(Character::isAlphabetic)
+                                                .sorted()
+                                                .toArray();
+
+        return Arrays.equals(wordASortedArray, wordBSortedArray);
+    }
+
+    public boolean areAnagrams_1(String wordA, String wordB) {
         Map<Character, Integer> wordACharCount = getMapOfCharacterCounts(wordA.toLowerCase());
         Map<Character, Integer> wordBCharCount = getMapOfCharacterCounts(wordB.toLowerCase());
 
@@ -20,11 +36,13 @@ public class AnagramChecker {
 
         for (int i = 0; i < wordToCheck.length(); i ++) {
             char charAtIndex = wordToCheck.charAt(i);
-            if (result.containsKey(charAtIndex)) {
-                Integer countOfChar = result.get(charAtIndex);
-                result.put(charAtIndex, countOfChar++);
-            } else {
-                result.put(charAtIndex, 1);
+            if (charAtIndex != ' ') {
+                if (result.containsKey(charAtIndex)) {
+                    Integer countOfChar = result.get(charAtIndex) + 1;
+                    result.put(charAtIndex, countOfChar);
+                } else {
+                    result.put(charAtIndex, 1);
+                }
             }
         }
 
