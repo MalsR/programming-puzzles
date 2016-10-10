@@ -2,7 +2,15 @@ package com.malsr.coderbyte;
 
 public class FirstReverse {
 
-    public String reverse(String str) {
+    public String reverse(String stringToReverse) {
+        if (stringToReverse == null || stringToReverse.length() == 0) {
+            return null;
+        }
+
+        return new StringBuilder(stringToReverse).reverse().toString();
+    }
+
+    public String reverse_1(String str) {
         if (str == null || str.length() == 0) {
             return null;
         }

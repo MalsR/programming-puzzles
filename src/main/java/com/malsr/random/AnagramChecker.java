@@ -21,6 +21,9 @@ public class AnagramChecker {
         return Arrays.equals(wordASortedArray, wordBSortedArray);
     }
 
+    /*
+    Another way of checking for anagrams using maps
+     */
     public boolean areAnagrams_1(String wordA, String wordB) {
         Map<Character, Integer> wordACharCount = getMapOfCharacterCounts(wordA.toLowerCase());
         Map<Character, Integer> wordBCharCount = getMapOfCharacterCounts(wordB.toLowerCase());

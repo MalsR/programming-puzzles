@@ -1,3 +1,4 @@
+###Description
 Given a grid of size m x n, calculate the total number of rectangles contained in this
 rectangle. All integer sizes and positions are counted.
 

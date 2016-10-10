@@ -8,7 +8,7 @@ import static org.junit.Assert.*;
 
 public class GridRectanglesCalculatorTest {
 
-    GridRectanglesCalculator rectanglesCalculator;
+    private GridRectanglesCalculator rectanglesCalculator;
 
     @Before
     public void setup() {
