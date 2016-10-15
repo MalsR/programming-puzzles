@@ -10,7 +10,7 @@ largest_digit(120) -> 2
 ```
 In the last example, given an input of 120, we treat it as the 4-digit number 0120.
 
-Today's challenge is really more of a warmup for the bonuses. If you were able to complete it, I highly recommend giving the bonuses a shot!
+Today's challenge is really more of a warm up for the bonuses. If you were able to complete it, I highly recommend giving the bonuses a shot!
 
 ###Bonus 1
 
@@ -35,7 +35,8 @@ kaprekar(6589) -> 2
 kaprekar(5455) -> 5
 kaprekar(6174) -> 0
 ```
-Numbers like 3333 would immediately go to 0 under this routine, but since we require at least two different digits in the input, all numbers will eventually reach 6174, which is known as Kaprekar's Constant. Watch this video if you're still unclear on how Kaprekar's Routine works.
+Numbers like 3333 would immediately go to 0 under this routine, but since we require at least two different digits in the input, all numbers will eventually reach 6174, which is known as Kaprekar's Constant. 
+Watch this [video](https://www.youtube.com/watch?v=d8TRcZklX_Q) if you're still unclear on how Kaprekar's Routine works.
 
 What is the largest number of iterations for Kaprekar's Routine to reach 6174? That is, what's the largest possible output for your kaprekar function, given a valid input? Post the answer along with your solution.
 
