@@ -1,6 +1,7 @@
 package com.malsr.random;
 
 import java.util.HashSet;
+import java.util.Optional;
 import java.util.Set;
 
 public class KaprekarRoutine {
@@ -8,7 +9,6 @@ public class KaprekarRoutine {
     public int largestDigit(int number) {
 
         Set<Integer> digitSet = new HashSet<>();
-
         int numberToBreakDown = number;
         int divisor = 1000;
 
@@ -20,8 +20,10 @@ public class KaprekarRoutine {
             digitSet.add(digit);
         }
 
-        System.out.println(digitSet);
+        Optional<Integer> first = digitSet.stream()
+                .sorted((o1, o2) -> {return o1 > o2 ? -1 : 0;})
+                .findFirst();
 
-        return (int) digitSet.toArray()[3];
+        return first.orElse(-1);
     }
 }
