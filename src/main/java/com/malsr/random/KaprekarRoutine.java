@@ -42,4 +42,32 @@ public class KaprekarRoutine {
         }
         return list;
     }
+
+    //Bonus#2
+    public int kaprekarConstantIterations(int numberToCheck) {
+        if (numberToCheck == 6174)
+            return 0;
+
+        List<Integer> digitsInNumber = getDigitsInNumber(numberToCheck);
+
+        //Collections.sort(digitsInNumber, Collections.reverseOrder());
+
+        StringBuilder builder1 = new StringBuilder();
+        digitsInNumber.stream().sorted((o1, o2) -> {return o1 > o2 ? -1 : (o1.intValue() == o2.intValue() ? 0 : 1);})
+                .forEach(builder1::append);
+
+        StringBuilder builder2 = new StringBuilder();
+        digitsInNumber.stream().sorted().forEach(builder2::append);
+
+        int reverseDescending = Integer.parseInt(builder1.toString());
+        int ascending = Integer.parseInt(builder2.toString());
+
+        numberToCheck = reverseDescending - ascending;
+        int count = 1;
+
+        if (numberToCheck == 6174) {
+            return count;
+        }
+        return (kaprekarConstantIterations(numberToCheck) + count);
+    }
 }

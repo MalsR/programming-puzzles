@@ -51,6 +51,20 @@ public class KaprekarRoutineTest {
     @Test
     public void returnsDescendingDigitsForTwoDigitNumber() throws Exception {
         assertEquals(2200, kaprekarRoutine.descendingDigits(22));
+    }
 
+    @Test
+    public void returnsTwoOnNumberOfKaprekarConstantIterations() {
+        assertEquals(2, kaprekarRoutine.kaprekarConstantIterations(6589));
+    }
+
+    @Test
+    public void returnsFiveOnNumberOfKaprekarConstantIterations() {
+        assertEquals(5, kaprekarRoutine.kaprekarConstantIterations(5455));
+    }
+
+    @Test
+    public void returnsZeroWhenNumberToCheckIsKaprekarConstant() {
+        assertEquals(0, kaprekarRoutine.kaprekarConstantIterations(6174));
     }
 }
