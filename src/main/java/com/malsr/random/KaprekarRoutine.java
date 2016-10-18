@@ -53,7 +53,7 @@ public class KaprekarRoutine {
             return 0;
 
         List<Integer> digitsInNumber = getDigitsInNumber(numberToCheck);
-
+        //can pull out some of the logic still a bit dirty
         StringBuilder reverseDigitBuilder = new StringBuilder();
         digitsInNumber.stream()
                 .sorted((o1, o2) -> {
@@ -111,7 +111,7 @@ public class KaprekarRoutine {
 
         long endTime = System.currentTimeMillis() - startTime;
         System.out.println(endTime);
-        
+
         return (kaprekarConstantIterations_2(numberToCheck) + 1);
     }
 }
