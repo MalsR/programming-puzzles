@@ -1,10 +1,13 @@
 package com.malsr.random;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
 public class KaprekarRoutine {
+
+    private static final int KAPREKAR_CONSTANT = 6174;
 
     public int largestDigit(int number) {
         List<Integer> digitSet = getDigitsInNumber(number);
@@ -45,29 +48,70 @@ public class KaprekarRoutine {
 
     //Bonus#2
     public int kaprekarConstantIterations(int numberToCheck) {
-        if (numberToCheck == 6174)
+        long startTime = System.currentTimeMillis();
+        if (numberToCheck == KAPREKAR_CONSTANT)
             return 0;
 
         List<Integer> digitsInNumber = getDigitsInNumber(numberToCheck);
 
-        //Collections.sort(digitsInNumber, Collections.reverseOrder());
+        StringBuilder reverseDigitBuilder = new StringBuilder();
+        digitsInNumber.stream()
+                .sorted((o1, o2) -> {
+                    return o1 > o2 ? -1 : (o1.intValue() == o2.intValue() ? 0 : 1);
+                })
+                .forEach(reverseDigitBuilder::append);
 
-        StringBuilder builder1 = new StringBuilder();
-        digitsInNumber.stream().sorted((o1, o2) -> {return o1 > o2 ? -1 : (o1.intValue() == o2.intValue() ? 0 : 1);})
-                .forEach(builder1::append);
+        StringBuilder naturalOrderDigitBuilder = new StringBuilder();
+        digitsInNumber.stream()
+                .sorted()
+                .forEach(naturalOrderDigitBuilder::append);
 
-        StringBuilder builder2 = new StringBuilder();
-        digitsInNumber.stream().sorted().forEach(builder2::append);
-
-        int reverseDescending = Integer.parseInt(builder1.toString());
-        int ascending = Integer.parseInt(builder2.toString());
+        int reverseDescending = Integer.parseInt(reverseDigitBuilder.toString());
+        int ascending = Integer.parseInt(naturalOrderDigitBuilder.toString());
 
         numberToCheck = reverseDescending - ascending;
-        int count = 1;
 
-        if (numberToCheck == 6174) {
-            return count;
+        if (numberToCheck == KAPREKAR_CONSTANT) {
+            return 1;
         }
-        return (kaprekarConstantIterations(numberToCheck) + count);
+
+        //quick benchmarking
+        long endTime = System.currentTimeMillis() - startTime;
+        System.out.println(endTime);
+
+        return (kaprekarConstantIterations(numberToCheck) + 1);
+    }
+
+    //Bonus#2 - Another way of sorting using Collections
+    public int kaprekarConstantIterations_2(int numberToCheck) {
+        long startTime = System.currentTimeMillis();
+        if (numberToCheck == KAPREKAR_CONSTANT)
+            return 0;
+
+        List<Integer> digitsInNumber = getDigitsInNumber(numberToCheck);
+
+        Collections.sort(digitsInNumber, Collections.reverseOrder());
+        StringBuilder reverseDigitBuilder = new StringBuilder();
+        digitsInNumber.forEach(reverseDigitBuilder::append);
+
+        List<Integer> naturalOrderedList = new ArrayList<>();
+        naturalOrderedList.addAll(digitsInNumber);
+        StringBuilder naturalOrderDigitBuilder = new StringBuilder();
+        Collections.sort(naturalOrderedList);
+        naturalOrderedList.forEach(naturalOrderDigitBuilder::append);
+
+        int reverseDescending = Integer.parseInt(reverseDigitBuilder.toString());
+        int ascending = Integer.parseInt(naturalOrderDigitBuilder.toString());
+
+        numberToCheck = reverseDescending - ascending;
+
+        if (numberToCheck == KAPREKAR_CONSTANT) {
+            return 1;
+        }
+
+        long endTime = System.currentTimeMillis() - startTime;
+        System.out.println(endTime);
+        
+        return (kaprekarConstantIterations_2(numberToCheck) + 1);
     }
 }
