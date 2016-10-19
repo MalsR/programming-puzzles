@@ -45,3 +45,6 @@ What is the largest number of iterations for Kaprekar's Routine to reach 6174? T
 
 https://www.reddit.com/r/dailyprogrammer/comments/56tbds/20161010_challenge_287_easy_kaprekars_routine/
 
+####More Details on Kaprekar
+Kaprekar Numbers - https://rosettacode.org/wiki/Kaprekar_numbers
+

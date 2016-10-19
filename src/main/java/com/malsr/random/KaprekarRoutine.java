@@ -89,7 +89,6 @@ public class KaprekarRoutine {
             return 0;
 
         List<Integer> digitsInNumber = getDigitsInNumber(numberToCheck);
-
         Collections.sort(digitsInNumber, Collections.reverseOrder());
         StringBuilder reverseDigitBuilder = new StringBuilder();
         digitsInNumber.forEach(reverseDigitBuilder::append);

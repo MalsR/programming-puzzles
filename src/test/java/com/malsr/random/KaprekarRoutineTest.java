@@ -67,4 +67,21 @@ public class KaprekarRoutineTest {
     public void returnsZeroWhenNumberToCheckIsKaprekarConstant() {
         assertEquals(0, kaprekarRoutine.kaprekarConstantIterations(6174));
     }
+
+    //***************** Calculating Kaprekar constant another way
+    @Test
+    public void returnsTwoOnNumberOfKaprekarConstantIterations_2() {
+        assertEquals(2, kaprekarRoutine.kaprekarConstantIterations_2(6589));
+    }
+
+    @Test
+    public void returnsFiveOnNumberOfKaprekarConstantIterations_2() {
+        assertEquals(5, kaprekarRoutine.kaprekarConstantIterations_2(5455));
+    }
+
+    @Test
+    public void returnsZeroWhenNumberToCheckIsKaprekarConstant_2() {
+        assertEquals(0, kaprekarRoutine.kaprekarConstantIterations_2(6174));
+    }
+    //***********************************
 }
