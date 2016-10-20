@@ -1,6 +1,36 @@
 package com.malsr.random;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.IntStream;
+
 public class Palindrome {
+
+    public boolean isPalindrome_3(String stringToCheck) {
+
+        if (stringToCheck != null && stringToCheck.length() > 0) {
+
+            int[] charArray = stringToCheck.chars()
+                    .filter(Character::isAlphabetic)
+                    .toArray();
+
+            //another way by comparing char values with a reversed char array
+
+//            int[] ints = filteredString.chars().toArray();
+//            for (int i = 0; i < ints.length / 2; i++) {
+//                int value = ints[i];
+//                ints[ints.length - 1 - i] = value;
+//                ints[i] = ints[ints.length - 1];
+//            }
+        }
+
+        return false;
+    }
+
+    public static void main(String[] args) {
+        new Palindrome().isPalindrome_3("onion");
+    }
 
     //Slightly complicated way of figuring out if any given word, sentence etc is a palindrome, see below.
     public boolean isPalindrome(String stringToCheck) {
