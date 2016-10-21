@@ -1,39 +1,28 @@
 package com.malsr.random;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.stream.IntStream;
-
 public class Palindrome {
 
-    public boolean isPalindrome_3(String stringToCheck) {
+    public boolean isPalindrome(String stringToCheck) {
 
         if (stringToCheck != null && stringToCheck.length() > 0) {
+            stringToCheck = getStringWithEnglishAlphabetLetters(stringToCheck.toLowerCase());
 
-            int[] charArray = stringToCheck.chars()
-                    .filter(Character::isAlphabetic)
-                    .toArray();
+            StringBuilder reverseStringBuilder = new StringBuilder();
+            char[] charArray = stringToCheck.toCharArray();
+            for (int i = charArray.length-1; i >= 0; i--) {
+                char charPrimitive = charArray[i];
+                if (',' != charPrimitive && '.' != charPrimitive && ' ' != charPrimitive) {
+                    reverseStringBuilder.append(charArray[i]);
+                }
+            }
 
-            //another way by comparing char values with a reversed char array
-
-//            int[] ints = filteredString.chars().toArray();
-//            for (int i = 0; i < ints.length / 2; i++) {
-//                int value = ints[i];
-//                ints[ints.length - 1 - i] = value;
-//                ints[i] = ints[ints.length - 1];
-//            }
+            return stringToCheck.equals(reverseStringBuilder.toString());
         }
-
         return false;
     }
 
-    public static void main(String[] args) {
-        new Palindrome().isPalindrome_3("onion");
-    }
-
-    //Slightly complicated way of figuring out if any given word, sentence etc is a palindrome, see below.
-    public boolean isPalindrome(String stringToCheck) {
+    //Complicated way of figuring out if any given word, sentence etc is a palindrome, see below.
+    public boolean isPalindrome1(String stringToCheck) {
 
         if (stringToCheck != null && stringToCheck.length() > 0) {
             //One way to check if a word is a palindrome is to split the plain word in two and check if the first
@@ -65,7 +54,7 @@ public class Palindrome {
         return false;
     }
 
-    //A simpler way (so far) of checking if any given word, sentence etc is a palindrome, see below.
+    //Another way (maybe a tad less complicated, only slightly) of checking if any given word, sentence etc is a palindrome, see below.
     public boolean isPalindrome2(String stringToCheck) {
 
         if (stringToCheck == null || stringToCheck.length() == 0) {

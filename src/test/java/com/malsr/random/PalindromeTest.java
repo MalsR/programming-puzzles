@@ -11,6 +11,7 @@ public class PalindromeTest {
         Palindrome palindrome = new Palindrome();
 
         assertTrue("Expected sentence to be a palindrome", palindrome.isPalindrome("Noel sees Leon."));
+        assertTrue("Expected sentence to be a palindrome", palindrome.isPalindrome1("Noel sees Leon."));
         assertTrue("Expected sentence to be a palindrome", palindrome.isPalindrome2("Noel sees Leon."));
     }
 
@@ -18,10 +19,9 @@ public class PalindromeTest {
     public void returnsTrueWhenComaSeparatedSentenceIsAPalindrome() {
         Palindrome palindrome = new Palindrome();
 
-        assertTrue("Expected comma separated sentence to be a palindrome",
-                palindrome.isPalindrome("A car, a man, a maraca."));
-        assertTrue("Expected comma separated sentence to be a palindrome",
-                palindrome.isPalindrome2("A car, a man, a maraca."));
+        assertTrue("Expected comma separated sentence to be a palindrome", palindrome.isPalindrome("A car, a man, a maraca."));
+        assertTrue("Expected comma separated sentence to be a palindrome",palindrome.isPalindrome1("A car, a man, a maraca."));
+        assertTrue("Expected comma separated sentence to be a palindrome", palindrome.isPalindrome2("A car, a man, a maraca."));
     }
 
     @Test
@@ -29,6 +29,7 @@ public class PalindromeTest {
         Palindrome palindrome = new Palindrome();
 
         assertTrue("Expected given word to be a palindrome", palindrome.isPalindrome("NooN"));
+        assertTrue("Expected given word to be a palindrome", palindrome.isPalindrome1("NooN"));
         assertTrue("Expected given word to be a palindrome", palindrome.isPalindrome2("NooN"));
     }
 
@@ -37,6 +38,7 @@ public class PalindromeTest {
         Palindrome palindrome = new Palindrome();
 
         assertFalse("Expected given sentence Not to be a palindrome", palindrome.isPalindrome("Noel sees a Leon."));
+        assertFalse("Expected given sentence Not to be a palindrome", palindrome.isPalindrome1("Noel sees a Leon."));
         assertFalse("Expected given sentence Not to be a palindrome", palindrome.isPalindrome2("Noel sees a Leon."));
     }
 
@@ -45,6 +47,7 @@ public class PalindromeTest {
         Palindrome palindrome = new Palindrome();
 
         assertFalse("Expected given word not to be a palindrome", palindrome.isPalindrome("Onion"));
+        assertFalse("Expected given word not to be a palindrome", palindrome.isPalindrome1("Onion"));
         assertFalse("Expected given word not to be a palindrome", palindrome.isPalindrome2("Onion"));
     }
 
@@ -53,6 +56,7 @@ public class PalindromeTest {
         Palindrome palindrome = new Palindrome();
 
         assertFalse("Expected empty string not to be a palindrome", palindrome.isPalindrome(""));
+        assertFalse("Expected empty string not to be a palindrome", palindrome.isPalindrome1(""));
         assertFalse("Expected empty string not to be a palindrome", palindrome.isPalindrome2(""));
     }
 }
