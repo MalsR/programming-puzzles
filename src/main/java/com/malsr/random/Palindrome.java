@@ -2,29 +2,36 @@ package com.malsr.random;
 
 public class Palindrome {
 
-    public boolean isPalindrome(String stringToCheck) {
+    public boolean isPalindrome(String wordOrPhraseToCheck) {
+        if (wordOrPhraseToCheck != null && wordOrPhraseToCheck.trim().length() > 0) {
+            String alphabeticString = getStringWithEnglishAlphabetLetters(wordOrPhraseToCheck.toLowerCase());
+            StringBuilder reverseStringBuilder = new StringBuilder(alphabeticString).reverse();
 
-        if (stringToCheck != null && stringToCheck.length() > 0) {
-            stringToCheck = getStringWithEnglishAlphabetLetters(stringToCheck.toLowerCase());
-
-            StringBuilder reverseStringBuilder = new StringBuilder();
-            char[] charArray = stringToCheck.toCharArray();
-            for (int i = charArray.length-1; i >= 0; i--) {
-                char charPrimitive = charArray[i];
-                if (',' != charPrimitive && '.' != charPrimitive && ' ' != charPrimitive) {
-                    reverseStringBuilder.append(charArray[i]);
-                }
-            }
-
-            return stringToCheck.equals(reverseStringBuilder.toString());
+            return alphabeticString.equals(reverseStringBuilder.toString());
         }
         return false;
     }
 
-    //Complicated way of figuring out if any given word, sentence etc is a palindrome, see below.
-    public boolean isPalindrome1(String stringToCheck) {
+    //Without using StringBuilder().reverse()
+    public boolean isPalindrome3(String wordOrPhraseToCheck) {
+        if (wordOrPhraseToCheck != null && wordOrPhraseToCheck.trim().length() > 0) {
+            String alphabeticString = getStringWithEnglishAlphabetLetters(wordOrPhraseToCheck.toLowerCase());
 
-        if (stringToCheck != null && stringToCheck.length() > 0) {
+            StringBuilder reverseStringBuilder = new StringBuilder();
+            char[] charArray = alphabeticString.toCharArray();
+
+            for (int i = charArray.length - 1; i >= 0; i--) {
+                reverseStringBuilder.append(charArray[i]);
+            }
+
+            return alphabeticString.equals(reverseStringBuilder.toString());
+        }
+        return false;
+    }
+
+    //Complicated clunky way of figuring out if any given word, sentence etc is a palindrome, see below.
+    public boolean isPalindrome1(String stringToCheck) {
+        if (stringToCheck != null && stringToCheck.trim().length() > 0) {
             //One way to check if a word is a palindrome is to split the plain word in two and check if the first
             //part of the word is equal to the second part of the word (when reversed)
             String plainEnglishWordsOnly = getStringWithEnglishAlphabetLetters(stringToCheck);
@@ -56,8 +63,7 @@ public class Palindrome {
 
     //Another way (maybe a tad less complicated, only slightly) of checking if any given word, sentence etc is a palindrome, see below.
     public boolean isPalindrome2(String stringToCheck) {
-
-        if (stringToCheck == null || stringToCheck.length() == 0) {
+        if (stringToCheck == null || stringToCheck.trim().length() == 0) {
             return false;
         }
 
@@ -88,13 +94,12 @@ public class Palindrome {
     private String getStringWithEnglishAlphabetLetters(String stringToCheck) {
         StringBuilder result = new StringBuilder();
 
-        //Now have whole english words only and remove any other chars
-        //use stringToCheck.replace with regex to only include a-z chars and skip rest
+        //Only return alphabetic string
         for (int i = 0; i <= stringToCheck.length() - 1; i++) {
-            char charAtIndex = stringToCheck.charAt(i);
-            String stringToCompare = Character.toString(charAtIndex);
-            if (!" ".equals(stringToCompare) && !".".equals(stringToCompare) && !",".equals(stringToCompare)) {
-                result.append(stringToCompare);
+            int codePoint = stringToCheck.codePointAt(i);
+
+            if (Character.isAlphabetic(codePoint)) {
+                result.append(stringToCheck.charAt(i));
             }
         }
 

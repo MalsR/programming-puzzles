@@ -1,62 +1,61 @@
 package com.malsr.random;
 
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+
+import java.util.Arrays;
+import java.util.Collection;
 
 import static org.junit.Assert.*;
 
+@RunWith(Parameterized.class)
 public class PalindromeTest {
 
-    @Test
-    public void returnsTrueWhenGivenSentenceIsAPalindrome() {
-        Palindrome palindrome = new Palindrome();
+    private String message;
+    private boolean expectedResult;
+    private String wordOrPhrase;
 
-        assertTrue("Expected sentence to be a palindrome", palindrome.isPalindrome("Noel sees Leon."));
-        assertTrue("Expected sentence to be a palindrome", palindrome.isPalindrome1("Noel sees Leon."));
-        assertTrue("Expected sentence to be a palindrome", palindrome.isPalindrome2("Noel sees Leon."));
+    private final Palindrome palindrome = new Palindrome();
+
+    public PalindromeTest(String message, boolean expectedResult, String wordOrPhrase) {
+        this.message = message;
+        this.expectedResult = expectedResult;
+        this.wordOrPhrase = wordOrPhrase;
+    }
+
+    @Parameterized.Parameters
+    public static Collection<Object[]> setupData() {
+        return Arrays.asList(new Object[][] {
+                {"Expected sentence to be a palindrome", true, "Noel sees Leon."},
+                {"Expected comma separated sentence to be a palindrome", true, "A car, a man, a maraca."},
+                {"Expected given word to be a palindrome", true, "NooN"},
+                {"Expected given sentence Not to be a palindrome", false, "Noel sees a Leon."},
+                {"Expected given word not to be a palindrome", false, "Onion"},
+                {"Expected empty string not to be a palindrome", false, ""},
+                {"Expected empty string with whitespace not to be a palindrome", false, " "}
+        });
     }
 
     @Test
-    public void returnsTrueWhenComaSeparatedSentenceIsAPalindrome() {
-        Palindrome palindrome = new Palindrome();
-
-        assertTrue("Expected comma separated sentence to be a palindrome", palindrome.isPalindrome("A car, a man, a maraca."));
-        assertTrue("Expected comma separated sentence to be a palindrome",palindrome.isPalindrome1("A car, a man, a maraca."));
-        assertTrue("Expected comma separated sentence to be a palindrome", palindrome.isPalindrome2("A car, a man, a maraca."));
+    public void returnsIfGivenWordOrPhraseIsPalindrome() {
+        assertEquals(message, expectedResult, palindrome.isPalindrome(wordOrPhrase));
     }
 
     @Test
-    public void returnsTrueWhenGivenWordIsAPalindrome() {
-        Palindrome palindrome = new Palindrome();
-
-        assertTrue("Expected given word to be a palindrome", palindrome.isPalindrome("NooN"));
-        assertTrue("Expected given word to be a palindrome", palindrome.isPalindrome1("NooN"));
-        assertTrue("Expected given word to be a palindrome", palindrome.isPalindrome2("NooN"));
+    public void returnsTrueIfGivenStringIsPalindrome_3() {
+        assertEquals(message, expectedResult, palindrome.isPalindrome3(wordOrPhrase));
     }
 
+    //Another way of checking for Palindrome
     @Test
-    public void returnsFalseWhenGivenSentenceIsNotAPalindrome() {
-        Palindrome palindrome = new Palindrome();
-
-        assertFalse("Expected given sentence Not to be a palindrome", palindrome.isPalindrome("Noel sees a Leon."));
-        assertFalse("Expected given sentence Not to be a palindrome", palindrome.isPalindrome1("Noel sees a Leon."));
-        assertFalse("Expected given sentence Not to be a palindrome", palindrome.isPalindrome2("Noel sees a Leon."));
+    public void returnsIfGivenWordOrPhraseIsPalindrome_1() {
+        assertEquals(message, expectedResult, palindrome.isPalindrome1(wordOrPhrase));
     }
 
+    //Another way of checking for Palindrome
     @Test
-    public void returnsFalseWhenGivenWordIsNotAPalindrome() {
-        Palindrome palindrome = new Palindrome();
-
-        assertFalse("Expected given word not to be a palindrome", palindrome.isPalindrome("Onion"));
-        assertFalse("Expected given word not to be a palindrome", palindrome.isPalindrome1("Onion"));
-        assertFalse("Expected given word not to be a palindrome", palindrome.isPalindrome2("Onion"));
-    }
-
-    @Test
-    public void returnsFalseWhenEmptyStringIsNotAPalindrome() {
-        Palindrome palindrome = new Palindrome();
-
-        assertFalse("Expected empty string not to be a palindrome", palindrome.isPalindrome(""));
-        assertFalse("Expected empty string not to be a palindrome", palindrome.isPalindrome1(""));
-        assertFalse("Expected empty string not to be a palindrome", palindrome.isPalindrome2(""));
+    public void returnsIfGivenWordOrPhraseIsPalindrome_2() {
+        assertEquals(message, expectedResult, palindrome.isPalindrome2(wordOrPhrase));
     }
 }
