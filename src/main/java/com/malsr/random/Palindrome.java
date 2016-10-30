@@ -12,7 +12,7 @@ public class Palindrome {
         return false;
     }
 
-    //Without using StringBuilder().reverse()
+    //Without using built in StringBuilder().reverse()
     public boolean isPalindrome3(String wordOrPhraseToCheck) {
         if (wordOrPhraseToCheck != null && wordOrPhraseToCheck.trim().length() > 0) {
             String alphabeticString = getStringWithEnglishAlphabetLetters(wordOrPhraseToCheck.toLowerCase());
