@@ -1,31 +1,27 @@
 package com.malsr.random;
 
-import java.util.Arrays;
-
 public class YesterdayStockPriceChecker {
 
     public int getMaximumProfit(int[] stockPriceYesterday) {
-        int lowestStockPrice = 0;
-        int lowestStockPriceIndexPos = -1;
+        int overallProfit = Integer.MIN_VALUE;
 
-        for (int i = 0; i < stockPriceYesterday.length; i++) {
-            int stockPrice = stockPriceYesterday[i];
+        for (int i = 0; i <= stockPriceYesterday.length - 1; i++) {
+            int stockPriceInTime = stockPriceYesterday[i];
 
-            if (i == 0) {
-                lowestStockPrice = stockPrice;
+            int profitMarginForStockPrice = Integer.MIN_VALUE;
+            if (i+1 <= stockPriceYesterday.length-1) {
+                for (int y = i+1; y <= stockPriceYesterday.length - 1; y++) {
+                    int stockPriceInNextMinute = stockPriceYesterday[y];
+                    if (profitMarginForStockPrice < stockPriceInNextMinute - stockPriceInTime) {
+                        profitMarginForStockPrice = stockPriceInNextMinute - stockPriceInTime;
+                    }
+                }
             }
 
-            if (lowestStockPrice > stockPrice) {
-                lowestStockPrice = stockPrice;
-                lowestStockPriceIndexPos = i;
+            if (profitMarginForStockPrice > overallProfit) {
+                overallProfit = profitMarginForStockPrice;
             }
         }
-
-        //Now calculate the highest stock price after the time of the lowest stock price
-        Arrays.sort(stockPriceYesterday, lowestStockPriceIndexPos + 1, stockPriceYesterday.length);
-
-        int highestStockPrice = stockPriceYesterday[stockPriceYesterday.length-1];
-
-        return highestStockPrice - lowestStockPrice;
+        return overallProfit;
     }
 }
