@@ -13,6 +13,7 @@ some fun. Note: This is not a competition! You're also not compelled to favourit
 5. GridRectanglesCalculator - Calculate the number of rectangles in a given m*n grid - [Readme] (https://github.com/MalsR/programming-puzzles/blob/master/src/main/java/com/malsr/random/GridRectanglesCalculator-README.md)
 6. ReverseFactorialFinder - [Readme] (https://github.com/MalsR/programming-puzzles/blob/master/src/main/java/com/malsr/random/ReverseFactorialFinder-README.md)
 7. KaprekarsRoutine - [Readme] (https://github.com/MalsR/programming-puzzles/blob/master/src/main/java/com/malsr/random/KaprekarsRoutine-README.md)
+8. YesterdaysStockPrice - [Readme] (https://github.com/MalsR/programming-puzzles/blob/master/src/main/java/com/malsr/random/YesterdayStockPriceChecker-README.md)
  
 #### Below are examples from Coderbyte http://coderbyte.com/CodingArea/Challenges/ 
 1. FirstReverse - [Readme] (https://github.com/MalsR/programming-puzzles/blob/master/src/main/java/com/malsr/coderbyte/FirstReverse-README.md)
