@@ -1,19 +1,20 @@
 package com.malsr.codewars;
 
-public class CompleteThePattern2 {
+public class CompleteThePattern3 {
 
     public String pattern(int number) {
         final StringBuilder result = new StringBuilder();
 
-        for (int y = number; y > 0; y--) {
-            for (int x = 0; x < y; x++) {
+        for (int i = 1; i <= number; i++) {
+            for (int x = 0; x < i; x++) {
                 result.append(number - x);
             }
 
-            if (y != 1) {
+            if (i != number) {
                 result.append(System.lineSeparator());
             }
         }
+
 
         return result.toString();
     }
