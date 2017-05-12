@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/MalsR/programming-puzzles.svg?branch=master)](https://travis-ci.org/MalsR/programming-puzzles)
+
 # Puzzles
 
 Some coding puzzles and examples to keep you ticking and most important of all... to have
